@@ -54,7 +54,9 @@ input{
  background-color: rgba(19, 17, 17, 0.877);
 }
 #showScore{
-    background-color: #dfe6e9;
+    /* background-color: #dfe6e9; */
+    display: flex;
+    flex-direction: column;
     margin-top: 3rem;
     padding: 3rem 4rem;
     box-sizing: 0 1rem 1rem -0.7rem rgba(0, 0, 0, 0.4);
@@ -78,3 +80,67 @@ input{
 .scoreArea{
     display: none;
 }
+#showScore{
+    padding-left: 1px !important;
+    width: 40px !important;
+}
+.inner-div-score{
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 668px) {
+    
+    #showScore h3{
+        font-size: 1rem;
+        text-align: center;
+        
+    }
+    #showScore .btn{
+        margin-top: 2rem;
+        background-color: #55efc4;
+        color: #2d3436;
+        cursor: pointer;
+        font-size: 0.6rem;
+    }
+    .inner-div h2{
+        font-size: 1.3rem;
+        font-weight: 400;
+        margin: 1rem 0 2rem 0;
+    }
+    
+    .inner-div li{
+        font-size: 0.8rem;
+        margin-top: 1.3rem;
+        list-style: none;
+        cursor: pointer;
+    }
+  }
+  @media only screen and (max-width: 600px){
+    #showScore .btn{
+        width: 40px;
+        height: 20px;
+        padding-bottom: 2.4rem;
+        padding-left: 2rem;
+    }
+  
+  }
+
+  @media only screen and (max-width: 500px){
+      #showScore{
+          padding-left: 1px !important;
+          width: 40px !important;
+          margin-left: 69px !important;
+          max-width: 30% !important;
+      }
+      .inner-div-score{
+          display: flex !important;
+          flex-direction: column !important;
+          justify-content: center !important;
+      }
+      .inner-div{
+          padding-left: 20px !important;
+          padding-right: 20px !important;
+      }
+  }

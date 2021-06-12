@@ -97,8 +97,10 @@ submit.addEventListener('click', () => {
     }
     else{ 
         showScore.innerHTML = `
+        <div class = "inner-div-score">
         <h3>You scored ${score}/${quizDB.length}</h3>
         <button class = "btn" onclick = "location.reload()">Play Again</button>
+        </div>
         `;
         showScore.classList.remove('scoreArea');
     };
