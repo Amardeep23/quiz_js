@@ -53,6 +53,8 @@ const option4 = document.querySelector('#option4');
 const submit = document.querySelector('#submit');
 const answers = document.querySelectorAll('.answer');
 const showScore = document.querySelector('#showScore');
+var c=20;
+const time001 = document.querySelector('#time001');
 
 let questionCount = 0;
 let score = 0;
@@ -96,6 +98,8 @@ submit.addEventListener('click', () => {
         loadQuestion();
     }
     else{ 
+        window.clearInterval(update);
+        c="-";
         showScore.innerHTML = `
         <div class = "inner-div-score">
         <h3>You scored ${score}/${quizDB.length}</h3>
@@ -105,3 +109,23 @@ submit.addEventListener('click', () => {
         showScore.classList.remove('scoreArea');
     };
 });
+
+function timer001() {
+    c= c-1;
+    if(c<20){
+        time001.innerHTML = c;
+    }
+    if(c<1){
+        window.clearInterval(update);
+        submit.disabled = true;
+        showScore.innerHTML = `
+        <div class = "inner-div-score">
+        <p>TIME's UP</p>
+        <h3>You scored ${score}/${quizDB.length}</h3>
+        <button class = "btn" onclick = "location.reload()">Play Again</button>
+        </div>
+        `;
+        showScore.classList.remove('scoreArea');
+    }
+}
+update = setInterval("timer001()", 1000);
